@@ -193,6 +193,20 @@ function curlToPHP(curl) {
 
 		return php;
 	}
+    function copy() {
+    // Get the text field
+    var copyText = document.getElementById("output");
+    
+    // Select the text field
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); // For mobile devices
+    
+    // Copy the text inside the text field
+    navigator.clipboard.writeText(copyText.value);
+    
+    // Alert the copied text
+    
+    }
 
 	// extractRelevantPieces returns an object with relevant pieces
 	// extracted from cmd, the parsed command. This accounts for
