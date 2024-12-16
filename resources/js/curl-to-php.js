@@ -47,7 +47,7 @@ function curlToPHP(curl) {
 	var code = start;
 	code += '$url = '+phpExpandEnv(req.url)+';\n';
 	code += 'curl_setopt($ch, CURLOPT_URL, $url);\ncurl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);\ncurl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);\ncurl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);\n';
-	code += 'curl_setopt($ch, CURLOPT_PROXY, $proxy);\n';
+        //code += 'curl_setopt($ch, CURLOPT_PROXY, $proxy);\n';
 	if (req.headers.length == 0 && !req.data.ascii && !req.data.files && !req.data.multipart && !req.basicauth && !req.compressed) {
 		return code+renderSimple(req.method);
 	} else {
@@ -194,19 +194,15 @@ function curlToPHP(curl) {
 		return php;
 	}
     function copy() {
-    // Get the text field
-    var copyText = document.getElementById("output");
-    
-    // Select the text field
-    copyText.select();
-    copyText.setSelectionRange(0, 99999); // For mobile devices
-    
-    // Copy the text inside the text field
-    navigator.clipboard.writeText(copyText.value);
-    
-    // Alert the copied text
-    
-    }
+    var email = document.getElementById('output').innerText;
+    var tempInput = document.createElement('input');
+    tempInput.value = email;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand('copy');
+    document.body.removeChild(tempInput);
+    alert('Email address copied to clipboard: ');
+				}
 
 	// extractRelevantPieces returns an object with relevant pieces
 	// extracted from cmd, the parsed command. This accounts for
