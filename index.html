@@ -1,31 +1,20 @@
-
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>curl-to-PHP: Convert Curl commands to PHP code</title>
 		<meta charset="utf-8">
-		<script src="https://incarnate.github.io/curl-to-php/resources/js/jquery.min.js" type="text/javascript"></script>
-		<script src="https://incarnate.github.io/curl-to-php/resources/js/highlight.pack.js" type="text/javascript"></script>
-		<script src="https://incarnate.github.io/curl-to-php/resources/js/common.js" type="text/javascript"></script>
-		<!--<script src="https://incarnate.github.io/curl-to-php/resources/js/json-to-PHP.js" type="text/javascript"></script> -->
-		<script src="https://incarnate.github.io/curl-to-php/resources/js/curl-to-php.js" type="text/javascript"></script>
-		<link rel="stylesheet" href="https://incarnate.github.io/curl-to-php/resources/css/color-brewer.css">
-		<link rel="stylesheet" href="https://incarnate.github.io/curl-to-php/resources/css/common.css">
+		<script src="resources/js/jquery.min.js" type="text/javascript"></script>
+		<script src="resources/js/highlight.pack.js" type="text/javascript"></script>
+		<script src="resources/js/common.js" type="text/javascript"></script>
+		<!--<script src="resources/js/json-to-PHP.js" type="text/javascript"></script> -->
+		<script src="resources/js/curl-to-php.js" type="text/javascript"></script>
+		<link rel="stylesheet" href="resources/css/color-brewer.css">
+		<link rel="stylesheet" href="resources/css/common.css">
 	</head>
 	<body>
 
 		<header>
-			<h1>Curl-to-PHP</h1>
-			<h2>Instantly convert <a href="http://curl.haxx.se/">curl</a> commands to <a href="http://php.net/">PHP</a> code</h2>
-
-			<p>
-				This tool turns a Curl command into PHP code. Currently, it knows the following options: -d/--data/--data-binary, -F/--form, -H/--header, -I/--head, -u/--user, compressed, ---url and -X/--request. There's probably bugs; please <a href="https://github.com/incarnate/curl-to-php">contribute on GitHub</a>!
-			</p>
-
-			<p>
-				This script derives from Matt Holt's excellent <a href="https://github.com/mholt/curl-to-go">curl-to-Go</a>.
-			</p>
-
+			<h1>CURL TO PHP </h1>
 			<p class="examples">
 				<a href="javascript:" id="example1">Example 1</a> &middot;
 				<a href="javascript:" id="example2">Example 2</a> &middot;
@@ -37,13 +26,9 @@
 		<main>
 			<textarea id="input" rows="4" placeholder="Paste curl here"></textarea>
 			<div id="output"></div>
-			<div onclick="copyToClipboard()" ><a href="#">Copy to clipboard</a></div>
+			<br><div onclick="copyToClipboard()" ><a href="#">Copy to clipboard</a></div>
+
 		</main>
-
-
-		<footer>
-			&copy; 2017 - John C <a href="https://github.com/incarnate/curl-to-php">View on GitHub</a> - <a id="dark" href="javascript:">dark mode</a>
-		</footer>
 
 	</body>
 	<script> 
