@@ -26,7 +26,7 @@
 		<main>
 			<textarea id="input" rows="4" placeholder="Paste curl here"></textarea>
 			<div id="output"></div>
-			<br><div onclick="copyToClipboard()" ><a href="#">Copy to clipboard</a></div>
+			<br> <div id="copy-to-clipboard" class="text-end"><a href="#">Copy to clipboard</a></div>
 
 		</main>
 		<footer>
@@ -35,15 +35,17 @@
 
 	</body>
 	<script> 
-	
-	function copyToClipboard() {
-    var email = document.getElementById('output').textContent;
-    var tempInput = document.createElement('input');
-    tempInput.value = email;
-    document.body.appendChild(tempInput);
-    tempInput.select();
-    document.body.removeChild(tempInput);
-    document.execCommand('copy');
-}
+    const copyToClipboardEl = document.getElementById('copy-to-clipboard')
+    copyToClipboardEl.addEventListener('click', (e) => {
+  e.preventDefault()
+  const generatedCodeEl = document.getElementById('output')
+  const selection = window.getSelection()
+  const range = document.createRange()
+  range.selectNodeContents(generatedCodeEl)
+  selection.removeAllRanges()
+  selection.addRange(range)
+
+  navigator.clipboard.writeText(generatedCodeEl.textContent)
+  }
 	</script>
 </html>
