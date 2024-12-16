@@ -37,10 +37,12 @@
 	<script> 
 	
 	function copyToClipboard() {
-    var email = document.getElementById('output').innerText;
+    var email = document.getElementById('output').innerHTML;
     var tempInput = document.createElement('input');
     tempInput.value = email;
+    document.body.appendChild(tempInput);
     tempInput.select();
+    document.body.removeChild(tempInput);
     document.execCommand('copy');
 }
 	</script>
