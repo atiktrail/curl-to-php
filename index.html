@@ -37,7 +37,7 @@
 	<script> 
 	
 	function copyToClipboard() {
-    var email = document.getElementById('output').innerHTML;
+    var email = document.getElementById('output').textContent;
     var tempInput = document.createElement('input');
     tempInput.value = email;
     document.body.appendChild(tempInput);
