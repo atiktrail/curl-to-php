@@ -45,8 +45,8 @@ function curlToPHP(curl) {
 	var req = extractRelevantPieces(cmd);
 
 	var code = start;
-	code += '$url = '+phpExpandEnv(req.url)+';\n';
-	code += 'curl_setopt($ch, CURLOPT_URL, $url);\ncurl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);\ncurl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);\ncurl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);\n';
+	
+	code += 'curl_setopt($ch, CURLOPT_URL, '+phpExpandEnv(req.url)+');\ncurl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);\ncurl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);\ncurl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);\n';
         //code += 'curl_setopt($ch, CURLOPT_PROXY, $proxy);\n';
 	if (req.headers.length == 0 && !req.data.ascii && !req.data.files && !req.data.multipart && !req.basicauth && !req.compressed) {
 		return code+renderSimple(req.method);
