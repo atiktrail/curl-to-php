@@ -193,7 +193,7 @@ function curlToPHP(curl) {
 
 		return php;
 	}
-    function copy() {
+    function copyEmail() {
     var email = document.getElementById('output').innerText;
     var tempInput = document.createElement('input');
     tempInput.value = email;
