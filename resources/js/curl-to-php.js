@@ -193,16 +193,6 @@ function curlToPHP(curl) {
 
 		return php;
 	}
-    function copyEmail() {
-    var email = document.getElementById('output').innerText;
-    var tempInput = document.createElement('input');
-    tempInput.value = email;
-    document.body.appendChild(tempInput);
-    tempInput.select();
-    document.execCommand('copy');
-    document.body.removeChild(tempInput);
-    alert('Email address copied to clipboard: ');
-				}
 
 	// extractRelevantPieces returns an object with relevant pieces
 	// extracted from cmd, the parsed command. This accounts for
